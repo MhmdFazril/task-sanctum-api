@@ -14,4 +14,4 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 Route::post('/logoutAll', [AuthController::class, 'logoutAll'])->middleware('auth:sanctum');
 
-Route::apiResource('/tasks', TaskController::class);
+Route::apiResource('/tasks', TaskController::class)->middleware('auth:sanctum');
